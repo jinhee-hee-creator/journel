@@ -1,0 +1,61 @@
+plugins {
+    id 'com.android.application'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    compileSdkVersion 29
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+
+    defaultConfig {
+        applicationId "com.example.journel"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+
+    implementation "com.google.android.material:material:$rootProject.materialVestion"//디자인
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayoutVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //lifecycle
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.lifecycleVersion"
+
+    //dependence : navigation
+    implementation "androidx.navigation:navigation-fragment:$rootProject.navigateVersion"
+    implementation "androidx.navigation:navigation-ui:$rootProject.navigateVersion"
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$rootProject.navigateVersion"
+
+//dependencies : log
+    implementation "com.jakewharton.timber:timber:$rootProject.timberVersion"
+//활동가져오기
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompactVersion"
+    implementation "androidx.activity:activity:$rootProject.activityVersion"
+    implementation "androidx.fragment:fragment:$rootProject.fragmentVersion"
+}
